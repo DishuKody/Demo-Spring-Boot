@@ -24,4 +24,14 @@ public class DemoController {
     public Greeting req(HttpServletRequest request, @RequestPart(name = "file", required = false) MultipartFile multipartFile) {
         return new Greeting(counter.incrementAndGet(), String.format("Hello, %s!", request.getParameter("name")));
     }
+
+    @GetMapping("/QA1-main")
+    public String QA1() {
+        return "QA1-m";
+    }
+
+    @GetMapping("/nonexistent")
+    public String nonexistent() {
+        return "nonexistent";
+    }
 }
